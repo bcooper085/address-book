@@ -2,7 +2,19 @@
 function Contact(first, last) {
   this.firstName = first;
   this.lastName = last;
+  this.addresses = [];
 }
+
+function Address(street, city, state) {
+  this.street = street;
+  this.city = city;
+  this.state = state;
+}
+
+var lisa = new Contact("Lisa", "Simpson");
+var home = new Address("101 S First St.", "Tacoma", "WA");
+
+lisa.addresses.push(home);
 
 Contact.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
